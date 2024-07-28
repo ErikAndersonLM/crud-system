@@ -7,6 +7,14 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    function handleSubmit(e){
+        e.preventDefault();
+
+        if(name !== '' && email !== '' && password !== '') {
+            alert('FAZER CADASTRO')
+        }
+    }
+
 
     return(
         <div className='container-center'>
@@ -15,14 +23,14 @@ export default function SignUp() {
                     <img src={logo} alt='Logo do sistema de cadastro.' />
                 </div>
 
-                <form>
+                <form onSubmit={handleSubmit}>
                     <h1>Cadastre-se</h1>
 
                     <input
                      type='text'
                      placeholder='Seu nome'
                      value={name}
-                     onChange={ (e) => setEmail(e.target.value)}   
+                     onChange={ (e) => setName(e.target.value)}   
                     />
 
                     <input
